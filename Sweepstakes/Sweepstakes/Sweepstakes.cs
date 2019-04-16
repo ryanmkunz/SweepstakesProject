@@ -9,6 +9,26 @@ namespace Sweepstakes
     {
         public Contestant Contestant;
 
+        public Sweepstakes(string name)
+        {
+
+        }
+
+        public void RegisterContestant(Contestant contestant)
+        {
+
+        }
+
+        public string PickWinner()
+        {
+            
+        }
+
+        public void PrintContestantInfo(Contestant contestant)
+        {
+
+        }
+
         public Sweepstakes GetSweepstakes()
         {
             throw new NotImplementedException();
