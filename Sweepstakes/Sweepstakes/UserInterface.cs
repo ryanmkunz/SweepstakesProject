@@ -7,9 +7,6 @@ namespace Sweepstakes
 {
     public static class UserInterface
     {
-        //User story suggests getting a registration number from user input
-        //but shouldn't that just be incremented with each addition?
-
         private static string Input;
 
         private static string GetUserInput(string validationType)
@@ -78,6 +75,12 @@ namespace Sweepstakes
         {
             Console.WriteLine("Enter email address");
             return GetUserInput("string");
+        }
+
+        public static string GetMoreContestants()
+        {
+            Console.WriteLine("Would you like to add another contestant?");
+            return GetUserInput("yesNo");
         }
 
         public static string GetMoreSweepstakes()

@@ -31,12 +31,12 @@ namespace Sweepstakes
 
         public void SetUpSweepstakes(ISweepstakesManager manager)
         {
-            sweepstakes = new Sweepstakes(UserInterface.GetSweepstakesName());
-            for (int i = 0; i < 3; i++)
+            sweepstakes = new Sweepstakes(UserInterface.GetSweepstakesName());            
+            do
             {
                 contestant = new Contestant();
                 sweepstakes.RegisterContestant(contestant);
-            }
+            } while (UserInterface.GetMoreContestants() == "yes");
             manager.InsertSweepstakes(sweepstakes);
             MakeMoreSweepstakes();            
         }
@@ -49,6 +49,7 @@ namespace Sweepstakes
             }
             else
             {
+                UserInterface.DisplayOkThenWinners();
                 GetOneWinner();
             }
         }
@@ -59,7 +60,6 @@ namespace Sweepstakes
             sweepstakes.PrintContestantInfo(winner);
             if (UserInterface.GetMoreWinners() == "yes")
             {
-                UserInterface.DisplayOkThenWinners();
                 GetOneWinner();
             }
             else

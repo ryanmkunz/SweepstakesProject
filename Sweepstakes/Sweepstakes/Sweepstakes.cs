@@ -29,7 +29,7 @@ namespace Sweepstakes
         //and got the green light to swap it out for Contestant
             do
             {
-                Drawing = random.Next(0, contestants.Count);
+                Drawing = random.Next(0, contestants.Count + 1);
             } while (!contestants.ContainsKey(Drawing));
 
             return contestants[Drawing];                        

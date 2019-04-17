@@ -16,13 +16,11 @@ namespace Sweepstakes
 
         public Sweepstakes GetSweepstakes()
         {
-            //get sweepstakes from top of stack
             return theStack.Pop();
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            //add sweepstakes to top of stack
             theStack.Push(sweepstakes);
         }
     }
