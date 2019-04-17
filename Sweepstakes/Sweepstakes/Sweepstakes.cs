@@ -7,28 +7,37 @@ namespace Sweepstakes
 {
     public class Sweepstakes
     {
-        public Contestant Contestant;
-        Dictionary<int, string> contestants;
-        
+        Dictionary<int, Contestant> contestants;
+        Random random = new Random();
+        int Drawing;
+        int regNumber;
 
         public Sweepstakes(string name)
         {
-
+            contestants = new Dictionary<int, Contestant>();
         }
 
         public void RegisterContestant(Contestant contestant)
         {
-            contestants.Add(contestant.RegistrationNum, ("" + contestant.FirstName + " " + contestant.LastName + " " + contestant.EmailAddress));
+            regNumber = contestants.Count() + 1;
+            contestants.Add(regNumber, contestant);
         }
 
         public string PickWinner()
         {
-            
+            do
+            {
+                Drawing = random.Next(0, contestants.Count);
+            } while (!contestants.ContainsKey(Drawing));
+
+            PrintContestantInfo(contestants[Drawing]);                        
+            return "winner";
         }
 
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine(contestant.FirstName + " " + contestant.LastName
+                + ", " + contestant.EmailAddress);
         }
     }
 }

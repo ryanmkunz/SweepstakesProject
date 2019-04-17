@@ -9,37 +9,46 @@ namespace Sweepstakes
     {
         public Sweepstakes sweepstakes;
         private string managementOption;
+        ISweepstakesManager manager;
+        Contestant contestant;
 
-        //As a developer, I want to implement dependency injection in my MarketingFirm class 
-        //so that I can utilize a sweepstakes manager.
-        //As a developer, I want to use the factory design pattern to allow a user to choose 
-        //between a SweepstakesStackManager or a SweepstakesQueueManager to manage the sweepstakes objects
-
-        //get a sweepstakes name
-        //choose stack or queue
-        //enter contestants
-        //get a winner
-        //print contestant info
-
-            public void SetUpSweepstakes ()
+        public void ManagerFactory ()
         {
-            //sweepstakes = new Sweepstakes(UserInterface.GetSweepstakesName());
-            managementOption = UserInterface.GetStackOrQueueSelection();
+            ticketNumber = 0;
+            managementOption = UserInterface.GetStackOrQueueSelection();            
             switch (managementOption)
             {
                 case "stack":
-                    SweepstakesStackManager stackManager = new SweepstakesStackManager();                    
+                    manager = new SweepstakesStackManager();                    
                     break;
                 case "queue":
-                    SweepstakesQueueManager queueManager = new SweepstakesQueueManager();
+                    manager = new SweepstakesQueueManager();
                     break;
                 default:
                     break;
             }
-
-
+            SetUpSweepstakes(manager);
         }
 
+        public void SetUpSweepstakes(ISweepstakesManager manager)
+        {
+            sweepstakes = new Sweepstakes(UserInterface.GetSweepstakesName());
+            for (int i = 0; i < 3; i++)
+            {
+                contestant = new Contestant();
+                sweepstakes.RegisterContestant(contestant);
+            }
+            manager.InsertSweepstakes(sweepstakes);
+            
 
+            if (UserInterface.GetMoreSweepstakes() == "yes")
+            {
+                ManagerFactory();
+            }
+            else
+            {
+                sweepstakes.PickWinner();
+            }
+        }
     }
 }

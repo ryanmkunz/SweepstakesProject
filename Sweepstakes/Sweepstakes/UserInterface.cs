@@ -12,7 +12,7 @@ namespace Sweepstakes
 
         private static string Input;
 
-        public static string GetUserInput(string validationType)
+        private static string GetUserInput(string validationType)
         {
             do
             {
@@ -21,7 +21,7 @@ namespace Sweepstakes
             return Input;
         }
 
-        public static bool InputValidation(string input, string validationType)
+        private static bool InputValidation(string input, string validationType)
         {
             switch (validationType)
             {
@@ -78,6 +78,12 @@ namespace Sweepstakes
         {
             Console.WriteLine("Enter email address");
             return GetUserInput("string");
+        }
+
+        public static string GetMoreSweepstakes()
+        {
+            Console.WriteLine();
+            return GetUserInput("yesNo");
         }
     }
 }

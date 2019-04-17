@@ -7,7 +7,8 @@ namespace Sweepstakes
 {
     public class SweepstakesStackManager : ISweepstakesManager
     {
-        Stack<Sweepstakes> theStack;
+        public Stack<Sweepstakes> theStack;
+
         public Sweepstakes GetSweepstakes()
         {
             //get sweepstakes from top of stack
