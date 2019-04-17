@@ -7,14 +7,15 @@ namespace Sweepstakes
 {
     public class SweepstakesQueueManager : ISweepstakesManager
     {
+        Queue<Sweepstakes> theQueue;
         public Sweepstakes GetSweepstakes()
         {
-            throw new NotImplementedException();
+            return theQueue.Dequeue();
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            theQueue.Enqueue(sweepstakes);
         }
     }
 }

@@ -9,5 +9,5 @@ namespace Sweepstakes
     {
         void InsertSweepstakes(Sweepstakes sweepstakes);
         Sweepstakes GetSweepstakes();
-    }
+    } 
 }

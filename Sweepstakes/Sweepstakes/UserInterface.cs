@@ -26,9 +26,25 @@ namespace Sweepstakes
             switch (validationType)
             {
                 case "yesNo":
-                    return true;
+                    if (input == "yes" || input == "no")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 case "string":
                     return true;
+                case "stackQueue":
+                    if (input == "stack" || input == "queue")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 default:
                     return false;
             }
@@ -41,9 +57,9 @@ namespace Sweepstakes
         }
 
         public static string GetStackOrQueueSelection()
-        {
-            Console.WriteLine("Would you like your contestants to be placed in a stack or queue?");
-            return GetUserInput("string");
+        {      
+            Console.WriteLine("Would you like your sweepstakes to be in a stack or queue?");
+            return GetUserInput("stackQueue");
         }
 
         public static string GetFirstName()

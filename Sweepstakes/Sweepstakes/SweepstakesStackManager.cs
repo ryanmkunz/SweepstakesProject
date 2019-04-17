@@ -7,14 +7,17 @@ namespace Sweepstakes
 {
     public class SweepstakesStackManager : ISweepstakesManager
     {
+        Stack<Sweepstakes> theStack;
         public Sweepstakes GetSweepstakes()
         {
-            throw new NotImplementedException();
+            //get sweepstakes from top of stack
+            return theStack.Pop();
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            //add sweepstakes to top of stack
+            theStack.Push(sweepstakes);
         }
     }
 }

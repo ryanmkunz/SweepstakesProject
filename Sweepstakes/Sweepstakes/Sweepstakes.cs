@@ -5,9 +5,11 @@ using System.Text;
 
 namespace Sweepstakes
 {
-    public class Sweepstakes : ISweepstakesManager
+    public class Sweepstakes
     {
         public Contestant Contestant;
+        Dictionary<int, string> contestants;
+        
 
         public Sweepstakes(string name)
         {
@@ -16,7 +18,7 @@ namespace Sweepstakes
 
         public void RegisterContestant(Contestant contestant)
         {
-
+            contestants.Add(contestant.RegistrationNum, ("" + contestant.FirstName + " " + contestant.LastName + " " + contestant.EmailAddress));
         }
 
         public string PickWinner()
@@ -27,16 +29,6 @@ namespace Sweepstakes
         public void PrintContestantInfo(Contestant contestant)
         {
 
-        }
-
-        public Sweepstakes GetSweepstakes()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void InsertSweepstakes(Sweepstakes sweepstakes)
-        {
-            throw new NotImplementedException();
         }
     }
 }

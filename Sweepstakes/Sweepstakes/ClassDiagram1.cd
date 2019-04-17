@@ -3,50 +3,46 @@
   <Class Name="Sweepstakes.Program" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="MarketingFirm" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Sweepstakes.Contestant">
-    <Position X="3.5" Y="5" Width="1.5" />
+    <Position X="3.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAACAg=</HashCode>
       <FileName>Contestant.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sweepstakes.UserInterface">
-    <Position X="6.5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAEAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QQAAAEAAAAAAAAAAEAAQAAgAEAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>UserInterface.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sweepstakes.Sweepstakes">
-    <Position X="3.5" Y="2.25" Width="1.5" />
+    <Position X="4.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABQAAABAAQAAAAAAAAAAAAQAAAAIAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAQAAACAAAAAAAAQAAAAIAAA=</HashCode>
       <FileName>Sweepstakes.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="Contestant" />
     </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Sweepstakes.SweepstakesStackManager">
-    <Position X="5.5" Y="2.75" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>SweepstakesStackManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Sweepstakes.SweepstakesQueueManager">
-    <Position X="7.5" Y="2.75" Width="1.5" />
+    <Position X="2.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>SweepstakesQueueManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -54,15 +50,12 @@
   <Class Name="Sweepstakes.MarketingFirm">
     <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>MarketingFirm.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="Sweepstakes" />
-    </ShowAsAssociation>
   </Class>
   <Interface Name="Sweepstakes.ISweepstakesManager">
-    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ISweepstakesManager.cs</FileName>

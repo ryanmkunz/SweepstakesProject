@@ -23,18 +23,21 @@ namespace Sweepstakes
 
             public void SetUpSweepstakes ()
         {
-            sweepstakes = new Sweepstakes(UserInterface.GetSweepstakesName());
+            //sweepstakes = new Sweepstakes(UserInterface.GetSweepstakesName());
             managementOption = UserInterface.GetStackOrQueueSelection();
             switch (managementOption)
             {
                 case "stack":
-
+                    SweepstakesStackManager stackManager = new SweepstakesStackManager();                    
                     break;
                 case "queue":
+                    SweepstakesQueueManager queueManager = new SweepstakesQueueManager();
                     break;
                 default:
                     break;
             }
+
+
         }
 
 
