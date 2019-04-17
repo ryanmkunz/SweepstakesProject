@@ -82,8 +82,29 @@ namespace Sweepstakes
 
         public static string GetMoreSweepstakes()
         {
-            Console.WriteLine();
+            Console.WriteLine("Want to set up another sweepstakes?");
             return GetUserInput("yesNo");
+        }
+
+        public static void DisplayWinnerMessage()
+        {
+            Console.WriteLine("And the winner is...");
+        }
+
+        public static string GetMoreWinners()
+        {
+            Console.WriteLine("Want to draw a winner for another sweepstakes?");
+            return GetUserInput("yesNo");
+        }
+
+        public static void DisplayOkThenWinners()
+        {
+            Console.WriteLine("Alright, lets draw a winner then");
+        }
+
+        public static void DisplayOkThenMoreSweepstakes()
+        {
+            Console.WriteLine("Alright, lets set up another sweepstakes");
         }
     }
 }

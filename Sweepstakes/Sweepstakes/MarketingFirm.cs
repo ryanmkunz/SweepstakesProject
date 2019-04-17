@@ -12,14 +12,13 @@ namespace Sweepstakes
         ISweepstakesManager manager;
         Contestant contestant;
 
-        public void ManagerFactory ()
+        public void ManagerFactory()
         {
-            ticketNumber = 0;
             managementOption = UserInterface.GetStackOrQueueSelection();            
             switch (managementOption)
             {
                 case "stack":
-                    manager = new SweepstakesStackManager();                    
+                    manager = new SweepstakesStackManager();
                     break;
                 case "queue":
                     manager = new SweepstakesQueueManager();
@@ -39,15 +38,34 @@ namespace Sweepstakes
                 sweepstakes.RegisterContestant(contestant);
             }
             manager.InsertSweepstakes(sweepstakes);
-            
+            MakeMoreSweepstakes();            
+        }
 
+        public void MakeMoreSweepstakes()
+        {
             if (UserInterface.GetMoreSweepstakes() == "yes")
             {
-                ManagerFactory();
+                SetUpSweepstakes(manager);
             }
             else
             {
-                sweepstakes.PickWinner();
+                GetOneWinner();
+            }
+        }
+        public void GetOneWinner()
+        {            
+            Contestant winner = manager.GetSweepstakes().PickWinner();
+            UserInterface.DisplayWinnerMessage();
+            sweepstakes.PrintContestantInfo(winner);
+            if (UserInterface.GetMoreWinners() == "yes")
+            {
+                UserInterface.DisplayOkThenWinners();
+                GetOneWinner();
+            }
+            else
+            {
+                UserInterface.DisplayOkThenMoreSweepstakes();
+                MakeMoreSweepstakes();
             }
         }
     }

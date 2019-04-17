@@ -9,6 +9,11 @@ namespace Sweepstakes
     {
         public Stack<Sweepstakes> theStack;
 
+        public SweepstakesStackManager()
+        {
+            theStack = new Stack<Sweepstakes>();
+        }
+
         public Sweepstakes GetSweepstakes()
         {
             //get sweepstakes from top of stack

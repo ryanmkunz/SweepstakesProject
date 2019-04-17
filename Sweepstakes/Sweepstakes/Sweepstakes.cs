@@ -23,15 +23,16 @@ namespace Sweepstakes
             contestants.Add(regNumber, contestant);
         }
 
-        public string PickWinner()
+        public Contestant PickWinner()
         {
+        //Talked to Mike Heinisch about the original string return type
+        //and got the green light to swap it out for Contestant
             do
             {
                 Drawing = random.Next(0, contestants.Count);
             } while (!contestants.ContainsKey(Drawing));
 
-            PrintContestantInfo(contestants[Drawing]);                        
-            return "winner";
+            return contestants[Drawing];                        
         }
 
         public void PrintContestantInfo(Contestant contestant)
